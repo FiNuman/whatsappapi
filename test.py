@@ -1,7 +1,5 @@
 from flask import Flask, request
 import requests
-import os
-import random
  
 app = Flask(__name__)
  
@@ -33,7 +31,7 @@ def generate_voice_audio(text):
     voice_url = response["data"]["voice_url"]
     return voice_url
  
- 
+  
 @app.route("/get_audio/<string:word>/<string:accent>")
 def get_audio(word, accent):
     pronunciation = get_pronunciation(word, accent)
